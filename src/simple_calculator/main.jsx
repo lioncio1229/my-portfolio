@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Header from "./header";
 import Calculator from "./calculator";
+import './stylesheet.css';
 
 class Main extends Component {
   state = {
