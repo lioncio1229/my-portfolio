@@ -1,0 +1,301 @@
+:root{
+    --pallete1: #FFFDE2;
+    --pallete2: #F9F6C6;
+    --pallete3: #FFF78B;
+    --pallete4: #8B842B;
+    --pallete5: #6D693B;
+}
+
+body
+{
+    background-color: var(--pallete1);
+    font-family: 'Poppins';
+    margin: 0;
+}
+
+/* #region Content */
+    .content
+    {
+        display: flex;
+        margin-left : 8px; 
+        margin-right : 8px;
+    }
+
+    .notes-wrapper
+    {
+        margin-right: 5px;
+        width: 40%;
+    }
+
+    .text-editor-wrapper
+    {
+        width:100%;
+    }
+
+/* #endregion */
+
+/* #region Header */
+    .header
+    {
+        background-color: var(--pallete3);
+        border-bottom: 1px solid var(--pallete4);
+    }
+
+    .header-title
+    {
+        margin: 0px;
+        padding: 10px;
+        padding-left: 23px;
+        color: var(--pallete4);
+    }
+/* #endregion */
+
+/* #region Notes */
+    .notelist
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 88vh;
+        position: relative;
+        background-color: var(--pallete1);
+    }
+
+    .note-item
+    {
+        background-color: var(--pallete4);
+        padding: 8px;
+        padding-left: 70px;
+        border-bottom: 2px solid var(--pallete3);
+        cursor: pointer;
+        user-select: none;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .note-item .delete-button
+    {
+        position: absolute;
+        top: 60%;
+        right: 5%;
+        transform: translateY(-50%);
+        display: none;
+    }
+
+    .note-item .textfile-icon
+    {
+        position: absolute;
+        top: 60%;
+        left: 4%;
+        transform: translateY(-50%);
+    }
+
+    .default-color
+    {
+        background-color: var(--pallete4);
+    }
+
+    .selected-color
+    {
+        background-color: var(--pallete5);
+    }
+
+    .note-item small
+    {
+        color: var(--pallete3);
+        font-style: italic;
+    }
+
+/* #endregion */
+
+/* #region Toolbox */
+    .toolbox
+    {
+        background-color: var(--pallete2);
+        padding: 10px;
+        display: flex;
+        justify-content: end;
+        min-height: 30px;
+    }
+
+    .toolbox > * 
+    {
+        margin-left: 10px;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+
+/* #endregion */
+
+/* #region Text Editor */
+    .text-editor
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 88vh;
+    }
+
+    .text-editor-title
+    {
+        background-color: var(--pallete4);
+        padding: 10px;
+        text-align: center;
+        height: 40px;
+    }
+
+    .text-editor-title input
+    {
+        border-style: none;
+        outline: none;
+        background-color: var(--pallete4);
+        font-size: 20px;
+        color: var(--pallete1);
+        width: 70%;
+        text-align: center;
+    }
+
+    textarea
+    {
+        border: 1px solid var(--pallete4);
+        resize: none;
+        height: 100%;
+        font-size: 20px;
+        color: var(--pallete4);
+        outline: none;
+        padding: 10px;
+    }
+
+    textarea::selection
+    {
+        background-color: var(--pallete4);
+        color: var(--pallete2);
+    }
+
+    .no-selected
+    {
+        background-color: white;
+        padding: auto;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--pallete4);
+        font-size: 20px;
+        border-left: 1px solid var(--pallete4);
+    }
+
+/* #endregion */
+
+/* #region Create Note */
+.create-note-wrapper
+{
+    width: 350px;
+    height: 180px;
+    position: absolute;
+    bottom: 65px;
+    right: 0;
+    display: none;
+}
+
+/* #endregion */
+
+/* #region Delete Note */
+    .delete-note-wrapper
+    {
+        width: 300px;
+        height: 180px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+    }
+
+/* #endregion */
+
+/* #region Others */
+    .button
+    {
+        background-color: var(--pallete4);
+        border: 1px solid var(--pallete5);
+        border-radius: 10px;
+        padding: 5px;
+        text-align: center;
+        color: var(--pallete3);
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .button:hover
+    {
+        background-color: #837d29;
+    }
+
+    .button-s2
+    {
+        width: 150px;
+    }
+
+    .make-center
+    {
+        margin-left: auto;
+        margin-right: auto;
+    }
+/* #endregion */
+
+/* #region Window */
+    .window
+    {
+        background-color: var(--pallete1);
+        border: 1px solid var(--pallete4);
+        border-bottom: 3px solid var(--pallete4);
+        width: 100%;
+        height: 100%;
+    }
+
+    .window-title
+    {
+        background-color: var(--pallete4);
+        padding: 5px;
+        color: var(--pallete3);
+        font-size: 22px;
+        text-align: center;
+        border-bottom: 2px solid var(--pallete5);
+        position:relative;
+    }
+
+    .window-title img
+    {
+        position: absolute;
+        top: 10px;
+    }
+
+/* #endregion */
+
+/* #region Text Field 1 */
+    .text-field-1
+    {
+        border-style: none;
+        outline: none;
+        background-color: var(--pallete1);
+        font-size: 20px;
+        color: var(--pallete4);
+        text-align: center;
+        display: block;
+        margin-top: 20px;
+    }
+
+    .text-field-1::placeholder
+    {
+        font-style: italic;
+        color: lightgray;
+    }
+
+    .text-field-1::selection
+    {
+        background-color: var(--pallete4);
+        color: var(--pallete2);
+    }
+/* #endregion */
+

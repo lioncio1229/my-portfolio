@@ -1,0 +1,161 @@
+html{
+    --primary: #5FBC91;
+    --secondary: #DEFEF1;
+}
+
+body
+{
+    color: var(--primary);
+    font-family: 'poppins';
+    font-size: 18px;
+}
+
+.content
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.content-item
+{
+    width: 100%;
+}
+
+button
+{
+    border-style: none;
+    padding: 20px;
+    background-color: var(--primary);
+    border-radius: 30px;
+    padding: 10px 25px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    min-width: 150px;
+}
+
+.inputfield
+{
+    border: 1px solid var(--primary);
+    border-radius: 10px;
+    height: 25px;
+    font-size: 1.1em;
+    color: var(--primary);
+}
+
+/* #region NAVBAR */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    /* background-color: rgb(191, 255, 234); */
+}
+
+.brand-name
+{
+    color: var(--primary);
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 280%;
+    margin-left: 20px;
+}
+
+nav ul li
+{
+    display: inline;
+    padding: 20px 14px;
+}
+
+nav ul li a
+{
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: 500;
+    font-size: 20px;
+}
+
+/* #endregion */
+
+
+/* #region CONTAINER */
+
+.container-title
+{
+    background-color: var(--primary);
+    padding: 10px 20px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.grid-container
+{
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 10px;
+}
+
+    /* #region PRODUCT CONTAINER */
+
+    .container-item
+    {
+        text-align: center;
+        font-size: 17px;
+        color: var(--primary);
+        padding: 10px;
+        border-bottom: 1px solid var(--primary);
+        position: relative;
+
+        cursor: pointer;
+    }
+
+    .toggle-display
+    {
+        padding: 0;
+        width: 20px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .toggle-primary
+    {
+        background-color: var(--primary);
+    }
+
+    .toggle-secondary
+    {
+        background-color: var(--secondary);
+    }
+
+    /* #endregion */
+
+    /* #region INFO */
+    .key
+    {
+        background-color: var(--primary);
+        color: white;
+    }
+
+    .value
+    {
+        background-color: var(--secondary);
+        color: var(--primary);
+    }
+
+    .key, .value
+    {
+        padding: 14px;
+        border-bottom: 2px solid white;
+        font-weight: bold;
+        font-size: 20px;
+    }
+    /* #endregion */
+
+
+
+/* #endregion */
