@@ -14,12 +14,13 @@ export default function ColorSelect({ bandName, handleCloseColorSelect}) {
   };
 
   const handleClickOutside = (e) => {
-    if(!listColorRef.current.contains(e.target))
+    const current = listColorRef.current;
+    if(current && !current.contains(e.target))
       handleCloseColorSelect();
   }
 
   useEffect(() => {
-    document.addEventListener('click', handleClickOutside, true);
+    document.addEventListener('click', (e) => handleClickOutside(e), true);
   });
 
   return (
@@ -27,7 +28,7 @@ export default function ColorSelect({ bandName, handleCloseColorSelect}) {
       {colorcodeTable.map(
         (colorCode) =>
           colorCode[bandName] !== undefined && (
-            <ColorItem key={colorCode['name']} bandName={bandName} colorCode={colorCode} handleColorClick={handleColorClick}/>
+            <ColorItem key={colorCode['color']} bandName={bandName} colorCode={colorCode} handleColorClick={handleColorClick}/>
           )
       )}
     </div>

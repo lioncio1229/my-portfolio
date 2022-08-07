@@ -32,13 +32,13 @@ export default function ColorItem({ bandName, colorCode, handleColorClick }) {
 
     return (
         <div
-        onClick={(e) => handleColorClick(e, colorCode["color"])}
-        onMouseEnter={mouseEnter}
-        onMouseLeave={mouseLeave}
-        className={"color-item selection " + colorCode["color"]}
-        >
-        <FontAwesomeIcon ref={caretRightRef} icon={faCaretRight} className="caret-right" />
-        {displayValue(colorCode, bandName)}
+            onClick={(e) => handleColorClick(e, colorCode["color"])}
+            onMouseEnter={mouseEnter}
+            onMouseLeave={mouseLeave}
+            className={"color-item selection " + colorCode["color"]}
+            >
+            <FontAwesomeIcon ref={caretRightRef} icon={faCaretRight} className="caret-right" />
+            {displayValue(colorCode, bandName)}
         </div>
     );
 }
