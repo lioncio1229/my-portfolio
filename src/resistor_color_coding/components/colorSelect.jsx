@@ -1,9 +1,7 @@
 import { useContext, useEffect, useRef } from "react";
+import ColorItem from "./colorItem";
 import { BandContext } from "../context/color_coding_provider";
 import { colorcodeTable } from "../colorCodes";
-import abbreviateNumber from "../utils/abbreviateNumber";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCaretRight } from "@fortawesome/free-solid-svg-icons";
 
 export default function ColorSelect({ bandName, handleCloseColorSelect}) {
   const [state, dispatch] = useContext(BandContext);
@@ -24,32 +22,12 @@ export default function ColorSelect({ bandName, handleCloseColorSelect}) {
     document.addEventListener('click', handleClickOutside, true);
   });
 
-  const displayValue = (colorCode, bandName) =>
-  {
-    switch (bandName) {
-      case 'multiplier':
-        return 'x ' + abbreviateNumber(colorCode[bandName]) + " " + colorCode["color"];
-      case 'tolerance':
-        return '± '+(colorCode[bandName] * 100) + "% " + colorCode["color"];
-      default:
-        return colorCode[bandName] + " " + colorCode["color"]
-    }
-  }
-
   return (
     <div ref={listColorRef} className="color-select flex-container-column">
       {colorcodeTable.map(
         (colorCode) =>
           colorCode[bandName] !== undefined && (
-            <div
-              key={colorCode["color"]}
-              onClick={(e) => handleColorClick(e, colorCode["color"])}
-              className={"color-item selection " + colorCode["color"]}
-            >
-              <FontAwesomeIcon icon={faCaretRight} className="caret-right"/>
-              
-              {displayValue(colorCode, bandName)}
-            </div>
+            <ColorItem key={colorCode['name']} bandName={bandName} colorCode={colorCode} handleColorClick={handleColorClick}/>
           )
       )}
     </div>
